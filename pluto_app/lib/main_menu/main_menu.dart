@@ -12,11 +12,36 @@ class _main_menuState extends State<main_menu> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text(
-          'Main Menu',
-          style: TextStyle(
-            fontSize: 30,
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  height: 100,
+                  width: 200,
+                  color: Colors.amberAccent,
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  height: 100,
+                  width: 200,
+                  color: Colors.amberAccent,
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
