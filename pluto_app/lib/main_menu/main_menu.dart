@@ -16,9 +16,30 @@ class _main_menuState extends State<main_menu> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                
+                Spacer(),
+                //Income Button
+                OutlinedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, 'incomes_menu');
+                  },
+                  child: Icon(
+                    Icons.money,
+                    size: 60,
+                  ),
+                ),
+                Spacer(),
+                OutlinedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, 'expenses_menu');
+                  },
+                  child: Icon(
+                    Icons.money_off_rounded,
+                    size: 60,
+                  ),
+                ),
+                Spacer(),
               ],
             ),
             Row(

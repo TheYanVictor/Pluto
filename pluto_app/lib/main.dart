@@ -8,6 +8,7 @@ import 'package:pluto_app/main_menu/expenses_menu.dart';
 import 'package:pluto_app/main_menu/incomes_menu.dart';
 import 'package:pluto_app/main_menu/investments_menu.dart';
 import 'package:pluto_app/main_menu/main_menu.dart';
+import 'package:pluto_app/statistics/statistics_menu.dart';
 
 //Change scroll settings
 class MyCustomBehavior extends MaterialScrollBehavior {
@@ -43,6 +44,9 @@ void main() {
           'incomes_menu': (context) => income_menu(),
           'expenses_menu': (context) => expenses_menu(),
           'investments_menu': (context) => investments_menu(),
+
+          //Sub menus
+          'statistics_menu': (context) => statistics_menu(),
         },
       ),
     ),
