@@ -11,55 +11,247 @@ class _main_menuState extends State<main_menu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //Appbar
+      appBar: AppBar(
+        //Middle title
+        title: Text(
+          'Main Menu',
+          style: TextStyle(fontSize: 30),
+        ),
+        toolbarHeight: 100,
+        centerTitle: true,
+
+        backgroundColor: Color.fromARGB(255, 221, 182, 44),
+        //Logout button
+        leading: OutlinedButton(
+          style: OutlinedButton.styleFrom(
+            side: BorderSide(color: Colors.transparent),
+          ),
+          child: Icon(
+            Icons.logout,
+            size: 50,
+            color: Colors.white,
+          ),
+          onPressed: () {
+            Navigator.pushNamed(context, 'log_in');
+          },
+        ),
+
+        //Settings button
+        actions: [
+          OutlinedButton(
+            style: OutlinedButton.styleFrom(
+              side: BorderSide(color: Colors.transparent),
+            ),
+            child: Icon(
+              Icons.settings,
+              size: 50,
+              color: Colors.white,
+            ),
+            onPressed: () {
+              Navigator.pushNamed(context, 'menu_config');
+            },
+          ),
+        ],
+      ),
+
       body: Center(
+        //Main column
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
+            //Search bar
+            Container(
+              width: 300,
+              height: 50,
+              child: TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  hintText: '  Search',
+                  hintStyle: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 23,
+                  ),
+                ),
+              ),
+            ),
+            //First 2 buttons
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Spacer(),
                 //Income Button
-                OutlinedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, 'incomes_menu');
-                  },
-                  child: Icon(
-                    Icons.money,
-                    size: 60,
-                  ),
+                Column(
+                  children: [
+                    OutlinedButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, 'incomes_menu');
+                      },
+                      child: Icon(
+                        Icons.money,
+                        size: 60,
+                      ),
+                    ),
+                    //Space
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      'Income',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
                 ),
                 Spacer(),
-                OutlinedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, 'expenses_menu');
-                  },
-                  child: Icon(
-                    Icons.money_off_rounded,
-                    size: 60,
-                  ),
+                //Expenses Button
+                Column(
+                  children: [
+                    OutlinedButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, 'expenses_menu');
+                      },
+                      child: Icon(
+                        Icons.shopping_cart,
+                        size: 60,
+                      ),
+                    ),
+                    //Space
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      'Expenses',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+
+                Spacer(),
+              ],
+            ),
+            //Second 2 buttons
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Spacer(),
+                //Investments Button
+                Column(
+                  children: [
+                    OutlinedButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, 'investments_menu');
+                      },
+                      child: Icon(
+                        Icons.money,
+                        size: 60,
+                      ),
+                    ),
+                    //Space
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      'Investments',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+                Spacer(),
+                //History Button
+                Column(
+                  children: [
+                    OutlinedButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, 'history_menu');
+                      },
+                      child: Icon(
+                        Icons.history,
+                        size: 60,
+                      ),
+                    ),
+                    //Space
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      'History',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
                 ),
                 Spacer(),
               ],
             ),
+            //Third 2 buttons
             Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Container(
-                  height: 100,
-                  width: 200,
-                  color: Colors.amberAccent,
+                Spacer(),
+                //Banks Button
+                Column(
+                  children: [
+                    OutlinedButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, 'banks_menu');
+                      },
+                      child: Icon(
+                        Icons.account_balance,
+                        size: 60,
+                      ),
+                    ),
+                    //Space
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      'Banks',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Container(
-                  height: 100,
-                  width: 200,
-                  color: Colors.amberAccent,
+                Spacer(),
+                Column(
+                  children: [
+                    OutlinedButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, 'expenses_menu');
+                      },
+                      child: Icon(
+                        Icons.money_off_rounded,
+                        size: 60,
+                      ),
+                    ),
+                    //Space
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      'Something',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
                 ),
+                Spacer(),
               ],
             ),
           ],

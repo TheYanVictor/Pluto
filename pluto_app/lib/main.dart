@@ -3,8 +3,11 @@ import 'dart:js';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
+import 'package:pluto_app/configurations/menu_config.dart';
 import 'package:pluto_app/log_in/log_in_page.dart';
+import 'package:pluto_app/main_menu/banks_menu.dart';
 import 'package:pluto_app/main_menu/expenses_menu.dart';
+import 'package:pluto_app/main_menu/history_menu.dart';
 import 'package:pluto_app/main_menu/incomes_menu.dart';
 import 'package:pluto_app/main_menu/investments_menu.dart';
 import 'package:pluto_app/main_menu/main_menu.dart';
@@ -47,6 +50,9 @@ void main() {
 
           //Sub menus
           'statistics_menu': (context) => statistics_menu(),
+          'menu_config': (context) => menu_config(),
+          'history_menu': (context) => history_menu(),
+          'banks_menu': (context) => Banks_Menu(),
         },
       ),
     ),

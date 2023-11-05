@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class menu_config extends StatefulWidget {
@@ -11,6 +10,12 @@ class menu_config extends StatefulWidget {
 class _menu_configState extends State<menu_config> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+        body: Center(
+      child: Text(
+        'Menu Config',
+        style: TextStyle(fontSize: 60),
+      ),
+    ));
   }
 }
