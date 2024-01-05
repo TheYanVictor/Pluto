@@ -63,8 +63,10 @@ class _main_menuState extends State<main_menu> {
             //Search bar
             Container(
               width: 300,
-              height: 50,
+              height: 60,
+              alignment: Alignment.bottomCenter,
               child: TextField(
+                textAlign: TextAlign.left,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20),
