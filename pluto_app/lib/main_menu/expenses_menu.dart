@@ -1,4 +1,7 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
+import 'package:pluto_app/configurations/app_bar.dart';
 
 class expenses_menu extends StatefulWidget {
   const expenses_menu({super.key});
@@ -9,50 +12,18 @@ class expenses_menu extends StatefulWidget {
 
 class _expenses_menuState extends State<expenses_menu> {
   @override
+  //List of colors for the expenses
+  List<int> colorCodes = [600, 500, 100, 200, 300, 400, 500, 600, 700, 800];
+  List<String> entries = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
+
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context)
+        .size; //This provides us total height and width of our screen
     return Scaffold(
       //Appbar
-      appBar: AppBar(
-        //Middle title
-        title: Text(
-          'Expenses',
-          style: TextStyle(fontSize: 30),
-        ),
-        toolbarHeight: 100,
-        centerTitle: true,
-
-        backgroundColor: Color.fromARGB(255, 255, 213, 61),
-        //Logout button
-        leading: OutlinedButton(
-          style: OutlinedButton.styleFrom(
-            side: BorderSide(color: Colors.transparent),
-          ),
-          child: Icon(
-            Icons.logout,
-            size: 50,
-            color: Colors.white,
-          ),
-          onPressed: () {
-            Navigator.pushNamed(context, 'log_in');
-          },
-        ),
-
-        //Settings button
-        actions: [
-          OutlinedButton(
-            style: OutlinedButton.styleFrom(
-              side: BorderSide(color: Colors.transparent),
-            ),
-            child: Icon(
-              Icons.settings,
-              size: 50,
-              color: Colors.white,
-            ),
-            onPressed: () {
-              Navigator.pushNamed(context, 'menu_config');
-            },
-          ),
-        ],
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(100),
+        child: AppBarSample(title: 'Expenses'),
       ),
 
       //Main column
@@ -60,10 +31,41 @@ class _expenses_menuState extends State<expenses_menu> {
         padding: EdgeInsets.all(20),
         child: Column(
           children: [
-            Center(
-              child: Text(
-                'Expenses Menu',
-                style: TextStyle(fontSize: 30),
+            //Area for graphs
+            Container(
+              width: size.width,
+              height: size.height * 0.2,
+              color: Colors.grey,
+              child: Center(
+                child: Text(
+                  'Graphs',
+                  style: TextStyle(fontSize: 30),
+                ),
+              ),
+            ),
+            //Area for buttons
+            Container(
+              width: size.width,
+              height: size.height * 0.15,
+              color: Colors.blue,
+              child: Center(
+                child: Text(
+                  'Buttons',
+                  style: TextStyle(fontSize: 30),
+                ),
+              ),
+            ),
+            //Area for expenses list
+            Expanded(
+              child: ListView.builder(
+                itemCount: 10,
+                itemBuilder: (BuildContext context, int index) {
+                  return Container(
+                    height: 50,
+                    color: Colors.amber[colorCodes[index]],
+                    child: Center(child: Text('Entry ${entries[index]}')),
+                  );
+                },
               ),
             ),
           ],

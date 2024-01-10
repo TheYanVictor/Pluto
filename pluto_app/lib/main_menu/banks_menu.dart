@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pluto_app/configurations/app_bar.dart';
 
 class Banks_Menu extends StatefulWidget {
   @override
@@ -9,8 +10,10 @@ class _Banks_MenuState extends State<Banks_Menu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Banks Menu'),
+      //Appbar
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(100),
+        child: AppBarSample(title: 'Banks'),
       ),
       body: Center(
         child: Text(
