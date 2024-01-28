@@ -35,12 +35,9 @@ class _expenses_menuState extends State<expenses_menu> {
             Container(
               width: size.width,
               height: size.height * 0.2,
-              color: Colors.grey,
-              child: Center(
-                child: Text(
-                  'Graphs',
-                  style: TextStyle(fontSize: 30),
-                ),
+              child: Image.asset(
+                'assets/images/graficos_aleatorios.jpg',
+                fit: BoxFit.contain,
               ),
             ),
             //Area for buttons
@@ -60,10 +57,16 @@ class _expenses_menuState extends State<expenses_menu> {
               child: ListView.builder(
                 itemCount: 10,
                 itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    height: 50,
-                    color: Colors.amber[colorCodes[index]],
-                    child: Center(child: Text('Entry ${entries[index]}')),
+                  return OutlinedButton(
+                    style: OutlinedButton.styleFrom(
+                      backgroundColor: Colors.amber[colorCodes[index]],
+                      side: BorderSide(color: Colors.black, width: 1),
+                    ),
+                    onPressed: () {},
+                    child: Container(
+                      height: 50,
+                      child: Center(child: Text('Entry ${entries[index]}')),
+                    ),
                   );
                 },
               ),
