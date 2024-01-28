@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 class AppBarSample extends StatelessWidget {
   final String title;
+  //Color for icons
+  final iconsColor = Colors.green[700];
 
   AppBarSample({required this.title});
 
@@ -10,11 +12,11 @@ class AppBarSample extends StatelessWidget {
     return AppBar(
       title: Text(
         title,
-        style: TextStyle(fontSize: 30),
+        style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
       ),
       toolbarHeight: 100,
       centerTitle: true,
-      backgroundColor: Color.fromARGB(255, 255, 213, 61),
+      backgroundColor: iconsColor,
       leading: OutlinedButton(
         style: OutlinedButton.styleFrom(
           side: BorderSide(color: Colors.transparent),
@@ -22,7 +24,7 @@ class AppBarSample extends StatelessWidget {
         child: Icon(
           Icons.menu,
           size: 50,
-          color: Colors.white,
+          color: Colors.black54,
         ),
         onPressed: () {
           Navigator.pushNamed(context, 'main_menu');
@@ -36,7 +38,7 @@ class AppBarSample extends StatelessWidget {
           child: Icon(
             Icons.settings,
             size: 50,
-            color: Colors.white,
+            color: Colors.black54,
           ),
           onPressed: () {
             Navigator.pushNamed(context, 'menu_config');

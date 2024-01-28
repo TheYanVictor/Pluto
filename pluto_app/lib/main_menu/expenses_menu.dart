@@ -16,6 +16,22 @@ class _expenses_menuState extends State<expenses_menu> {
   List<int> colorCodes = [600, 500, 100, 200, 300, 400, 500, 600, 700, 800];
   List<String> entries = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
 
+  //List of items for the dropdown button
+  List<DropdownMenuItem<String>> timeStamp = [
+    DropdownMenuItem(
+      child: Text('Hoje'),
+      value: 'Item 1',
+    ),
+    DropdownMenuItem(
+      child: Text('7 dias'),
+      value: 'Item 2',
+    ),
+    DropdownMenuItem(
+      child: Text('30 dias'),
+      value: 'Item 3',
+    ),
+  ];
+
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context)
         .size; //This provides us total height and width of our screen
@@ -26,7 +42,9 @@ class _expenses_menuState extends State<expenses_menu> {
         child: AppBarSample(title: 'Expenses'),
       ),
 
-      //Main column
+      //
+      //---------------------------------BODY---------------------------------
+      //
       body: Padding(
         padding: EdgeInsets.all(20),
         child: Column(
@@ -35,22 +53,32 @@ class _expenses_menuState extends State<expenses_menu> {
             Container(
               width: size.width,
               height: size.height * 0.2,
-              child: Image.asset(
-                'assets/images/graficos_aleatorios.jpg',
+              child: Image.network(
+                'https://raw.githubusercontent.com/TheYanVictor/Pluto/main/pluto_app/assets/images/graficos_aleatorios.jpg',
                 fit: BoxFit.contain,
               ),
             ),
             //Area for buttons
-            Container(
-              width: size.width,
-              height: size.height * 0.15,
-              color: Colors.blue,
-              child: Center(
-                child: Text(
-                  'Buttons',
-                  style: TextStyle(fontSize: 30),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                //Button for adding expenses
+                TextButton.icon(
+                  onPressed: () {},
+                  icon: Icon(Icons.add),
+                  label: Text('Add expense'),
                 ),
-              ),
+
+                //Button for adding expenses
+                DropdownButton(
+                    hint: Text('Tempo'),
+                    items: timeStamp,
+                    onChanged: (value) {}),
+              ],
+            ),
+            //Space
+            SizedBox(
+              height: 20,
             ),
             //Area for expenses list
             Expanded(
