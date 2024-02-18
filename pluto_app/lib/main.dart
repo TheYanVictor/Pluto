@@ -24,35 +24,32 @@ class MyCustomBehavior extends MaterialScrollBehavior {
 
 void main() {
   runApp(
-    DevicePreview(
-      enabled: true,
-      builder: (context) => MaterialApp(
-        useInheritedMediaQuery: true,
-        debugShowCheckedModeBanner: true,
-        scrollBehavior: MyCustomBehavior(),
+    MaterialApp(
+      useInheritedMediaQuery: true,
+      debugShowCheckedModeBanner: true,
+      scrollBehavior: MyCustomBehavior(),
 
-        //Navigation routes
-        initialRoute: 'log_in',
+      //Navigation routes
+      initialRoute: 'log_in',
 
-        routes: {
-          //Log in page
-          'log_in': (context) => log_in_page(),
+      routes: {
+        //Log in page
+        'log_in': (context) => log_in_page(),
 
-          //Main menu
-          'main_menu': (context) => main_menu(),
+        //Main menu
+        'main_menu': (context) => main_menu(),
 
-          //Main menu direct routes
-          'incomes_menu': (context) => income_menu(),
-          'expenses_menu': (context) => expenses_menu(),
-          'investments_menu': (context) => investments_menu(),
+        //Main menu direct routes
+        'incomes_menu': (context) => income_menu(),
+        'expenses_menu': (context) => expenses_menu(),
+        'investments_menu': (context) => investments_menu(),
 
-          //Sub menus
-          'statistics_menu': (context) => statistics_menu(),
-          'menu_config': (context) => menu_config(),
-          'history_menu': (context) => history_menu(),
-          'banks_menu': (context) => Banks_Menu(),
-        },
-      ),
+        //Sub menus
+        'statistics_menu': (context) => statistics_menu(),
+        'menu_config': (context) => menu_config(),
+        'history_menu': (context) => history_menu(),
+        'banks_menu': (context) => Banks_Menu(),
+      },
     ),
   );
 }

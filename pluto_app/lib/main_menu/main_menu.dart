@@ -16,7 +16,9 @@ class _main_menuState extends State<main_menu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //
       //Appbar
+      //
       appBar: AppBar(
         //Middle title
         title: Text(
@@ -87,7 +89,9 @@ class _main_menuState extends State<main_menu> {
                 ),
               ),
             ),
-            //First 2 buttons
+            //
+            //-----------------------------First 2 buttons-----------------------------//
+            //
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -99,7 +103,7 @@ class _main_menuState extends State<main_menu> {
                   children: [
                     OutlinedButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, 'income_menu');
+                        Navigator.pushNamed(context, 'incomes_menu');
                       },
                       child: Icon(
                         Icons.attach_money,
